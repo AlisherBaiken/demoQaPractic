@@ -39,7 +39,7 @@ public class FillForm extends TestBase{
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step ("Открываем страницу формы",()-> {
-            open("https://demoqa.com/automation-practice-form");
+            open("/automation-practice-form");
         });
         step("Удаляем рекламу и футер",()->{
             executeJavaScript("$('#fixedban').remove()"); // delete reklama
