@@ -6,6 +6,7 @@ import com.github.javafaker.Faker;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
@@ -18,12 +19,9 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
 public class FillForm extends TestBase{
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
 
-    }
     @Test
+    @Tag("remote")
     @Feature("Проверка заполнения формы")
     @Story("Заполнеяния формы с фейкером")
     @Severity(SeverityLevel.BLOCKER)

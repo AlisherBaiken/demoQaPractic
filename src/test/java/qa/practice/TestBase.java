@@ -11,7 +11,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-public class TestBase {@BeforeAll
+public class TestBase {
+    @BeforeAll
 static void beforeAll() {
     Configuration.baseUrl = "https://demoqa.com";
     Configuration.browser = "chrome";
