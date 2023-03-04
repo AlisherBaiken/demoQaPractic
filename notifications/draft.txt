@@ -1,0 +1,10 @@
+Telegram username: @Qa_report_17
+Telegram token: 5617494691:AAGvXzZSaSRdYiZ4cEDV_cGZxxWr1iEvVOc
+Chat id:-1001802304115
+
+a. Fetch bot updates and look for the chat id:
+curl https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/getUpdates | jq .message.chat.id
+https://api.telegram.org/bot5617494691:AAGvXzZSaSRdYiZ4cEDV_cGZxxWr1iEvVOc/getUpdates
+
+Send a message using the HTTP API: https://core.telegram.org/bots/api#sendmessage
+curl -X POST  -H 'Content-Type: application/json' -d '{"chat_id": "-1001802304115", "text": "This is a test from qa.guru", "disable_notification": true}'https://api.telegram.org/bot5617494691:AAGvXzZSaSRdYiZ4cEDV_cGZxxWr1iEvVOc/sendMessage
