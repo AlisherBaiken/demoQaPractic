@@ -35,11 +35,47 @@ dependencies {
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.9.0')
 }
 
-test {
-    useJUnitPlatform()
+tasks.withType(Test) {
     systemProperties(System.getProperties())
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
 task remote_test(type: Test) {
     useJUnitPlatform {
         includeTags("remote")
+    }}
+task property_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("propety")
+    }}
+task hello_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("hello")
+    }}
+task two_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("hello","propety")
+    }}
+task tags_example_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("hello","propety","needed")
+        excludeTags("prod")
+    }}
+help {
+    doFirst {
+        println ""
+        println "************************************************************************ "
+        println "***                                                                  *** "
+        println "*** Welcome to https://github.com/qa-guru/demoqa-test-16!            *** "
+        println "***                                                                  *** "
+        println "*** ./gradlew help                                                   *** "
+        println "***                                                                  *** "
+        println "************************************************************************ "
+        println ""
     }}
